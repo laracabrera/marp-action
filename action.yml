@@ -1,5 +1,5 @@
 name: marp-action
-description: 'Build your Marp presentation into a GitHub Pages site'
+description: 'A GitHub Action to build every Marp Presentation in a folder to GitHub Pages'
 branding: 
   icon: 'send'
   color: 'green'

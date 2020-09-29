@@ -22,7 +22,9 @@ echo ""
 
 echo "   Building with marp..."
 echo ""
-marp ${MARP_ARGS}
+for f in "$SUBFOLDER/**/*.md" "$SUBFOLDER/*.md" ; do
+  marp $f --allow-local-files -o "$(basename $f .md).pdf"
+done
 echo "✔  Built Successfully!"
 echo ""
 

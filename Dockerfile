@@ -1,7 +1,7 @@
 FROM node:13.10
 
-LABEL description "A GitHub Action to build a Marp Presentation website to GitHub Pages"
-LABEL repository "http://github.com/ralexander-phi/marp-action"
+LABEL description "A GitHub Action to build every Marp Presentation in a folder to GitHub Pages"
+LABEL repository "http://github.com/laracabrera/marp-action"
 
 RUN apt update && apt install -y git
 
