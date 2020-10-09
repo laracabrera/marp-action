@@ -9,5 +9,5 @@ RUN apk update && apk upgrade && \
 WORKDIR /home/marp/app
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-USER marp
+
 ENTRYPOINT ["/entrypoint.sh"]
