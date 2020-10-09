@@ -1,15 +1,13 @@
-FROM armno/node-chromium:11.6.0-alpine
+FROM marpteam/marp-cli:latest
 
-LABEL description "A GitHub Action to build every Marp Presentation in a folder to GitHub Pages"
-LABEL repository "http://github.com/laracabrera/marp-action"
+USER root
+RUN apk update && apk upgrade && \
+    apk add --no-cache \
+      bash@edge \
+      git@edge
 
-RUN apk update && apk add --no-cache bash git
-
-RUN npm install -g @marp-team/marp-cli@0.17.2
-
-ENV IS_DOCKER true
-
-ADD entrypoint.sh /entrypoint.sh
+WORKDIR /home/marp/app
+COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+USER marp
 ENTRYPOINT ["/entrypoint.sh"]
-
